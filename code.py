@@ -41,11 +41,9 @@ def get_ram_size():
     return round(psutil.virtual_memory().total / (1024 ** 3), 2)
 
 def get_screen_size():
-    # Replace this with your specific implementation for getting the screen size
     return "15 inch"
 
 def get_mac_address():
-    '''mac = ':'.join(['{:02x}'.format((int(x, 16) & 0xFF)) for x in hex(socket.gethostbyname_ex(socket.gethostname())[-1][-1])])'''
     return (":".join(f"{b:02x}" for b in uuid.getnode().to_bytes(6)))
 
 
@@ -55,7 +53,6 @@ def get_public_ip():
 def get_windows_version():
     return platform.version()
 
-# Example Usage
 print("1. Installed Software:", get_installed_software())
 download_speed, upload_speed = get_internet_speed()
 print("2. Internet Speed (Download Speed: {:.2f} Mbps, Upload Speed: {:.2f} Mbps)".format(download_speed, upload_speed))
